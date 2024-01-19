@@ -1,8 +1,20 @@
 var counter = 1;
-setInterval(function(){
+
+function switchSlide() {
     document.getElementById('radio' + counter).checked = true;
-    counter++;
-    if(counter > 4){
-        counter = 1;
-    }
-}, 2500);
+
+    // Standardowe opóźnienie między slajdami
+    setTimeout(function() {
+        counter++;
+
+        // Po osiągnięciu ostatniego slajdu, zaczekaj 10 sekund i wróć do pierwszego slajdu
+        if (counter > 4) {
+            counter = 1;
+            setTimeout(switchSlide, 8000);
+        } else {
+            switchSlide(); // Rekurencyjne wywołanie switchSlide
+        }
+    }, 10000);
+}
+
+switchSlide(); // Rozpocznij pierwsze przełączenie slajdu
