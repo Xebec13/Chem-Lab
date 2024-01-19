@@ -192,13 +192,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   min-height: 60vh;
+  overflow: hidden;
   background: #3a3434dc;
   backdrop-filter: blur(10px);
 }
 .contact {
   display: flex;
   flex-basis: 30%;
-  gap: 6em;
+  gap: 3em;
 }
 
 .contact h2 {
@@ -211,7 +212,6 @@ a:hover {
 }
 
 .contact form {
-  
   text-align: center;
   height: 53vh;
 }
